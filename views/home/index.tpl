@@ -1,56 +1,23 @@
 <!-- banner start -->
 <div class="am-g am-g-fixed blog-fixed am-u-sm-centered blog-article-margin">
     <div data-am-widget="slider" class="am-slider am-slider-b1" data-am-slider='{&quot;controlNav&quot;:false}'>
-        <ul class="am-slides">
+        <ul class="am-slides" style="max-height: 418px">
+        {{range $k, $post := .starPosts}}
             <li>
-                <img src="/static/assets/i/b1.jpg">
+                <img src="{{replace_image_src $post.Image}}?imageView/1/w/1280/h/320">
                 <div class="blog-slider-desc am-slider-desc ">
                     <div class="blog-text-center blog-slider-con">
-                        <span><a href="" class="blog-color">Article &nbsp;</a></span>
-                        <h1 class="blog-h-margin"><a href="">总在思考一句积极的话</a></h1>
-                        <p>那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。
+                        <span><a href="/post/{{$post.Id}}" class="blog-color">Article &nbsp;</a></span>
+                        <h1 class="blog-h-margin"><a href="/post/{{$post.Id}}">{{$post.Title}}</a></h1>
+                        <p>{{substr $post.Description 0 24}}
                         </p>
-                        <span class="blog-bor">2015/10/9</span>
+                        <span class="blog-bor">{{date $post.PushTime "M/d/Y"}}</span>
                         <br><br><br><br><br><br><br>
                     </div>
                 </div>
             </li>
-            <li>
-                <img src="/static/assets/i/b2.jpg">
-                <div class="am-slider-desc blog-slider-desc">
-                    <div class="blog-text-center blog-slider-con">
-                        <span><a href="" class="blog-color">Article &nbsp;</a></span>
-                        <h1 class="blog-h-margin"><a href="">总在思考一句积极的话</a></h1>
-                        <p>那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。
-                        </p>
-                        <span>2015/10/9</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="/static/assets/i/b3.jpg">
-                <div class="am-slider-desc blog-slider-desc">
-                    <div class="blog-text-center blog-slider-con">
-                        <span><a href="" class="blog-color">Article &nbsp;</a></span>
-                        <h1 class="blog-h-margin"><a href="">总在思考一句积极的话</a></h1>
-                        <p>那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。
-                        </p>
-                        <span>2015/10/9</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="/static/assets/i/b2.jpg">
-                <div class="am-slider-desc blog-slider-desc">
-                    <div class="blog-text-center blog-slider-con">
-                        <span><a href="" class="blog-color">Article &nbsp;</a></span>
-                        <h1 class="blog-h-margin"><a href="">总在思考一句积极的话</a></h1>
-                        <p>那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。
-                        </p>
-                        <span>2015/10/9</span>
-                    </div>
-                </div>
-            </li>
+        {{end}}
+
         </ul>
     </div>
 </div>
@@ -65,7 +32,7 @@
         <article class="am-g blog-entry-article">
             <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
                 <a href="/post/{{$post.Id}}">
-                    {{/*<img src="{{map_get .postImages $post.Id}}" alt="" class="am-u-sm-12">*/}}
+                    <img src="{{replace_image_src $post.Image}}?imageView/1/w/1280/h/720" alt="" class="am-u-sm-12">
                 </a>
             </div>
             <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
@@ -79,23 +46,21 @@
         </article>
     {{end}}
         <ul class="am-pagination">
-            <li class="am-pagination-prev"><a href="">&laquo; Prev</a></li>
-            <li class="am-pagination-next"><a href="">Next &raquo;</a></li>
+        {{/*<li class="am-pagination-prev"><a href="">&laquo; Prev</a></li>*/}}
+            <li class="am-pagination-next"><a href="/posts/2?s=home">More &raquo;</a></li>
         </ul>
     </div>
 
     <div class="am-u-md-4 am-u-sm-12 blog-sidebar">
         <div class="blog-sidebar-widget blog-bor">
-            <h2 class="blog-text-center blog-title"><span>About ME</span></h2>
-            <img src="https://lattecake.oss-cn-beijing.aliyuncs.com/static/images/about_me.jpg" alt="about me"
+            <h2 class="blog-text-center blog-title"><span>薛定谔的猿</span></h2>
+            <img src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Fweixin%2Fqrcode_for_gh_354bc8e8b814_1280.jpg"
+                 alt="about me"
                  class="blog-entry-img">
             <p>不跑马拉松的摄影师不是好程序员</p>
             <p>
-                男, 一名91年天蝎座(光棍节那天 ∑( ° △ °|||)︴)的码农！毕业于遥远的南方某学校, 11年来北京并从业已5年有余。
+                How does the world look through your eyes?
             </p>
-            <p>喜欢点一杯咖啡, 然后静静地坐在某个角落写点什么。喜欢在每个好天气的周末疯狂的跑步。偶尔有些挑食,立志要长肉的瘦子(会不会被人嫌弃)。</p>
-            <p>与其用泪水悔恨昨天，不如用汗水拼搏今天。当眼泪流尽的时候，留下的应该是坚强。</p>
-            <p>爱好：摄影、动漫、旅游、网球、马拉松</p>
         </div>
         <div class="blog-sidebar-widget blog-bor">
             <h2 class="blog-text-center blog-title"><span>Contact ME</span></h2>

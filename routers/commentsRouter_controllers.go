@@ -10,7 +10,23 @@ func init() {
 	beego.GlobalControllerRouter["github.com/lattecake/blog/controllers:HomeController"] = append(beego.GlobalControllerRouter["github.com/lattecake/blog/controllers:HomeController"],
 		beego.ControllerComments{
 			Method: "Index",
-			Router: `/:pageId`,
+			Router: `/`,
+			AllowHTTPMethods: []string{"get"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["github.com/lattecake/blog/controllers:HomeController"] = append(beego.GlobalControllerRouter["github.com/lattecake/blog/controllers:HomeController"],
+		beego.ControllerComments{
+			Method: "About",
+			Router: `/about`,
+			AllowHTTPMethods: []string{"get"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["github.com/lattecake/blog/controllers:HomeController"] = append(beego.GlobalControllerRouter["github.com/lattecake/blog/controllers:HomeController"],
+		beego.ControllerComments{
+			Method: "Reward",
+			Router: `/reward`,
 			AllowHTTPMethods: []string{"get"},
 			MethodParams: param.Make(),
 			Params: nil})

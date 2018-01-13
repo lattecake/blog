@@ -17,32 +17,15 @@ func (c *BaseController) Prepare() {
 
 	beginTime, _ := strconv.Atoi(c.Ctx.Input.Param("Begin-Time"))
 
-	//c.cache = utils.Cluster()
-
-	//popularCh := make(chan []*models.Post)
-	//var popularPosts []*models.Post
-	//
-	//go func() {
-	//	posts, err := models.PostPopular(5)
-	//	if err != nil {
-	//		log.Println(err)
-	//	}
-	//	popularCh <- posts
-	//	close(popularCh)
-	//}()
-	//
-	//
-	//popularPosts = <-popularCh
-
 	controllerName, actionName := c.GetControllerAndAction()
 
-	c.Data["Action"] = controllerName + "_" + actionName
-	//c.Data["popularPosts"] = popularPosts
+	c.Data["Active"] = controllerName + "_" + actionName
 	c.Layout = "default_layout.tpl"
 	c.LayoutSections = make(map[string]string)
 
 	prepareTime := time.Now().UnixNano() - int64(beginTime)
 
+	logs.Info("| Worker-Id | ", c.WorkerId(), " | ", controllerName + "_" + actionName)
 	logs.Info("| Worker-Id | ", c.Ctx.Input.Param("Worker-Id"), " | Begin-Time | ", time.Unix(0, int64(beginTime)).Format("2006-01-02 15:04:05.999999"), " | Prepare | ", time.Duration(prepareTime))
 }
 

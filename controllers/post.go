@@ -51,6 +51,7 @@ func (c *PostController) GetOne() {
 
 	html := github_flavored_markdown.Markdown([]byte(post.Content))
 
+	c.Data["title"] = post.Title
 	c.Data["image"] = images[0]
 	c.Data["post"] = post
 	c.Data["content"] = string(html)
@@ -74,4 +75,79 @@ func (c *PostController) GetOne() {
 // @router /learn [get]
 func (c *PostController) GetAll() {
 
+	pageId, err := strconv.Atoi(c.Ctx.Input.Param(":pageId"))
+	action := c.GetString("action", "all")
+
+	if err != nil {
+		logs.Warn(" | ", c.WorkerId(), " | ", err)
+		pageId = 1
+	}
+
+	if pageId < 1 {
+		pageId = 1
+	}
+
+	var offset int64 = 0
+	var limit int64 = 10
+
+	if pageId > 1 {
+		offset = int64(pageId) * limit
+	}
+
+	query := make(map[string]string)
+	query["status"] = "1"
+
+	switch action {
+	case "learn":
+		query["action__in"] = "1"
+	case "life":
+		query["action__in"] = "2,3"
+	}
+
+	posts, err := models.GetAllPost(query, []string{
+		"Title", "Description", "Id", "PushTime",
+	}, []string{
+		"Id",
+	}, []string{
+		"desc",
+	}, offset, limit)
+	if err != nil {
+		logs.Critical(c.WorkerId(), " | ", err)
+		c.Abort("500")
+		return
+	}
+
+	var postIds []int64
+
+	if posts != nil {
+		for _, val := range posts {
+			postIds = append(postIds, val.(map[string]interface{})["Id"].(int64))
+		}
+	}
+
+	postImage := map[int64]string{}
+
+	if postIds != nil {
+		images, err := models.GetImageByPostIds(postIds)
+		if err != nil {
+			logs.Error(c.WorkerId(), " | ", err)
+			c.Abort("500")
+			return
+		}
+		for _, image := range images {
+			postImage[image.PostId] = image.RealPath
+		}
+
+		for k, v := range posts {
+			posts[k].(map[string]interface{})["Image"] = postImage[v.(map[string]interface{})["Id"].(int64)]
+		}
+	}
+
+	c.Data["title"] = "小小的记录"
+	c.Data["postImages"] = postImage
+	c.Data["posts"] = posts
+	c.Data["prev"] = pageId - 1
+	c.Data["next"] = pageId + 1
+
+	c.TplName = "post/list.tpl"
 }

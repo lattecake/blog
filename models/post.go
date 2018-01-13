@@ -19,6 +19,7 @@ type Post struct {
 	Status      int       `orm:"default(0);column(status)"`
 	ReadNum     int64     `orm:"default(0);column(read_num)"`
 	Reviews     int64     `orm:"default(0);column(reviews)"`
+	Star        int64     `orm:"default(0);column(star)"`
 	PushTime    time.Time `orm:"null;column(push_time);auto_now;type(datetime)"`
 	CreatedAt   time.Time `orm:"null;column(created_at);auto_now_add;type(datetime)"`
 	Action      int       `orm:"column(action)"`

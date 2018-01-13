@@ -25,5 +25,9 @@ func init() {
 	beego.ErrorController(&controllers.ErrorController{})
 	beego.Include(&controllers.PostController{})
 	beego.Include(&controllers.HomeController{})
-	beego.Router("/", &controllers.HomeController{})
+	//beego.Router("/post/:pageId", &controllers.PostController{}, "get:GetAll")
+	beego.Router("/learn/:pageId", &controllers.PostController{}, "get:GetAll")
+	beego.Router("/posts", &controllers.PostController{}, "get:GetAll")
+	beego.Router("/posts/:pageId", &controllers.PostController{}, "get:GetAll")
+	beego.SetStaticPath("/favicon.ico", "static")
 }

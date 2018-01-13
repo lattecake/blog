@@ -13,7 +13,7 @@ func ReplaceImageUrl(images []string) string {
 }
 
 func ReplaceImageSrc(url string) string {
-	return strings.Replace(url, "/mnt/storage/uploads/", beego.AppConfig.String("source_url"), 1)
+	return strings.Replace(strings.Replace(url, "/mnt/storage/uploads/", "/mnt/storage/", 1), "/mnt/storage/", beego.AppConfig.String("source_url"), 1)
 }
 
 func PostImageSrc(images map[int64]string, postId int64) string {
