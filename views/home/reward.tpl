@@ -21,8 +21,8 @@
                 </blockquote>
                 <h1>$ 打赏 (*ˉ︶ˉ*):</h1>
                 <ul class="am-list am-list-border">
-                    <li><a href="https://lattecake.com/post/"><i class="am-icon-book am-icon-fw"></i>
-                        《进入全民https时代》</a></li>
+                    <li><a href="https://lattecake.com/post/{{.post.Id}}?s=reward"><i class="am-icon-book am-icon-fw"></i>
+                        《{{.post.Title}}》</a></li>
                 </ul>
                 <hr>
                 <h1>扫码打赏:</h1>

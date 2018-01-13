@@ -48,7 +48,7 @@ func (c *HomeController) Index() {
 	topPosts, err := models.GetAllPost(query, []string{
 		"Title", "Description", "Id", "PushTime", "Star",
 	}, []string{
-		"PushTime",
+		"Id",
 	}, []string{
 		"desc",
 	}, 0, 3)
@@ -104,6 +104,16 @@ func (c *HomeController) Index() {
 // @Failure 403 body is empty
 // @router /reward [get]
 func (c *HomeController) Reward() {
+
+	postId, err := c.GetInt64("postId")
+	if err == nil {
+		if post, err := models.GetPostById(postId); err == nil {
+			c.Data["post"] = post
+		}
+		logs.Error(" | ", c.WorkerId(), " | ", err)
+	} else {
+		logs.Warn(" | ", c.WorkerId(), " | ", err)
+	}
 
 	c.Data["title"] = "谢谢老板们打赏"
 	c.TplName = "home/reward.tpl"

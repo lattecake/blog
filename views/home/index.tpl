@@ -1,13 +1,13 @@
 <!-- banner start -->
 <div class="am-g am-g-fixed blog-fixed am-u-sm-centered blog-article-margin">
     <div data-am-widget="slider" class="am-slider am-slider-b1" data-am-slider='{&quot;controlNav&quot;:false}'>
-        <ul class="am-slides" style="max-height: 418px">
+        <ul class="am-slides">
         {{range $k, $post := .starPosts}}
             <li>
                 <img src="{{replace_image_src $post.Image}}?imageView/1/w/1280/h/320">
                 <div class="blog-slider-desc am-slider-desc ">
                     <div class="blog-text-center blog-slider-con">
-                        <span><a href="/post/{{$post.Id}}" class="blog-color">Article &nbsp;</a></span>
+                        {{/*<span><a href="/post/{{$post.Id}}" class="blog-color">Article &nbsp;</a></span>*/}}
                         <h1 class="blog-h-margin"><a href="/post/{{$post.Id}}">{{$post.Title}}</a></h1>
                         <p>{{substr $post.Description 0 24}}
                         </p>
