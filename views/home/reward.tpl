@@ -15,15 +15,18 @@
                     人生最要紧的就是要保持微笑。生命如此美妙，有太多的事，都值得微笑以对...
                 <blockquote>
 
-                如果您觉得文章写得不错，欢迎打赏打赏博主，您的一点点支持将会是博主无限的动力。
+                    如果您觉得文章写得不错，欢迎打赏打赏博主，您的一点点支持将会是博主无限的动力。
 
-                打赏的方式有两种：微信与支付宝，绝对赤裸裸的金钱打赏！
+                    打赏的方式有两种：微信与支付宝，绝对赤裸裸的金钱打赏！
                 </blockquote>
                 <h1>$ 打赏 (*ˉ︶ˉ*):</h1>
+            {{if .post}}
                 <ul class="am-list am-list-border">
-                    <li><a href="https://lattecake.com/post/{{.post.Id}}?s=reward"><i class="am-icon-book am-icon-fw"></i>
+                    <li><a href="https://lattecake.com/post/{{.post.Id}}?s=reward"><i
+                            class="am-icon-book am-icon-fw"></i>
                         《{{.post.Title}}》</a></li>
                 </ul>
+            {{end}}
                 <hr>
                 <h1>扫码打赏:</h1>
                 好人一生平安...
@@ -40,13 +43,17 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><img src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Falipay-RMB-xxx.png" alt="."></td>
+                        <td><img
+                                src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Falipay-RMB-xxx.png"
+                                alt="."></td>
                         <td>随意</td>
                         <td>支付宝</td>
                     </tr>
                     <tr>
-                        <td><img src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-xxx.JPG" alt="."
-                                 style="width: 100%;"></td>
+                        <td><img
+                                src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-xxx.JPG"
+                                alt="."
+                                style="width: 100%;"></td>
                         <td>随意</td>
                         <td>微信</td>
                     </tr>
@@ -63,35 +70,51 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><img src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-1.JPG" alt="."></td>
+                        <td><img
+                                src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-1.JPG"
+                                alt="."></td>
                         <td>¥1.00</td>
                     </tr>
                     <tr>
-                        <td><img src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-2.JPG" alt="."></td>
+                        <td><img
+                                src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-2.JPG"
+                                alt="."></td>
                         <td>¥2.00</td>
                     </tr>
                     <tr>
-                        <td><img src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-5.JPG" alt="."></td>
+                        <td><img
+                                src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-5.JPG"
+                                alt="."></td>
                         <td>¥5.00</td>
                     </tr>
                     <tr>
-                        <td><img src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-10.JPG" alt="."></td>
+                        <td><img
+                                src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-10.JPG"
+                                alt="."></td>
                         <td>¥10.00</td>
                     </tr>
                     <tr>
-                        <td><img src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-20.JPG" alt="."></td>
+                        <td><img
+                                src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-20.JPG"
+                                alt="."></td>
                         <td>¥20.00</td>
                     </tr>
                     <tr>
-                        <td><img src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-50.JPG" alt="."></td>
+                        <td><img
+                                src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-50.JPG"
+                                alt="."></td>
                         <td>¥50.00</td>
                     </tr>
                     <tr>
-                        <td><img src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-100.JPG" alt="."></td>
+                        <td><img
+                                src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-100.JPG"
+                                alt="."></td>
                         <td>¥100.00</td>
                     </tr>
                     <tr>
-                        <td><img src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-200.JPG" alt="."></td>
+                        <td><img
+                                src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Freward%2Fweixin-RMB-200.JPG"
+                                alt="."></td>
                         <td>¥200.00</td>
                     </tr>
                     </tbody>
