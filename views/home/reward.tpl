@@ -126,17 +126,14 @@
 
     <div class="am-u-md-4 am-u-sm-12 blog-sidebar">
         <div class="blog-sidebar-widget blog-bor">
-            <h2 class="blog-text-center blog-title"><span>About ME</span></h2>
+            <h2 class="blog-text-center blog-title"><span>薛定谔的猿</span></h2>
             <img src="https://lattecake.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Fweixin%2Fqrcode_for_gh_354bc8e8b814_1280.jpg"
                  alt="about me"
                  class="blog-entry-img">
             <p>不跑马拉松的摄影师不是好程序员</p>
             <p>
-                性取向女, 一名91年天蝎座(光棍节那天 ∑( ° △ °|||)︴)的码农！毕业于遥远的南方某学校, 11年来北京并从业已5年有余。
+                How does the world look through your eyes?
             </p>
-            <p>喜欢点一杯咖啡, 然后静静地坐在某个角落写点什么。喜欢在每个好天气的周末疯狂的跑步。偶尔有些挑食,立志要长肉的瘦子(会不会被人嫌弃)。</p>
-            <p>与其用泪水悔恨昨天，不如用汗水拼搏今天。当眼泪流尽的时候，留下的应该是坚强。</p>
-            <p>爱好：摄影、动漫、旅游、网球、马拉松</p>
         </div>
         <div class="blog-sidebar-widget blog-bor">
             <h2 class="blog-text-center blog-title"><span>Contact ME</span></h2>
