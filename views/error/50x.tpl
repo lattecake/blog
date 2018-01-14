@@ -1,104 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <title>建站平台</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <style>
-        * {
-            box-sizing: border-box
-        }
+<style type="text/css">
+    body {
+        margin: 0px;
+        padding: 0px;
+        font-family: "微软雅黑", Arial, "Trebuchet MS", Verdana, Georgia, Baskerville, Palatino, Times;
+        font-size: 16px;
+    }
 
-        body, html {
-            height: 100%;
-            width: 100%;
-            color: #fff;
-            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 13px;
-            font-weight: 400
-        }
+    div {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-        #qifeiye-error {
-            background: url(//fast.qifeiye.com/FeiEditor/bitSite/images/1.jpg) 0 0/cover no-repeat fixed;
-            height: 100%;
-            min-height: 100%;
-            overflow: hidden
-        }
+    a {
+        text-decoration: none;
+        color: #1064A0;
+    }
 
-        #qifeiye-error .container {
-            max-width: 1000px !important;
-            margin-top: 150px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 15px;
-            padding-right: 15px
-        }
+    a:hover {
+        color: #0078D2;
+    }
 
-        #qifeiye-error .overlay {
-            background: rgba(39, 62, 84, .82);
-            height: 100%;
-            left: 0;
-            min-height: 100%;
-            position: fixed;
-            top: 0;
-            width: 100%
-        }
+    img {
+        border: none;
+    }
 
-        #qifeiye-error .content, #qifeiye-error .error {
-            color: #fff;
-            margin-left: 0;
-            text-align: left;
-            position: relative
-        }
+    h1, h2, h3, h4 {
+        /*	display:block;*/
+        margin: 0;
+        font-weight: normal;
+        font-family: "微软雅黑", Arial, "Trebuchet MS", Helvetica, Verdana;
+    }
 
-        #qifeiye-error .error {
-            font-size: 128px;
-            font-weight: 600;
-            letter-spacing: -10px;
-            line-height: 128px;
-            margin-top: 0;
-            right: 0
-        }
+    h1 {
+        font-size: 44px;
+        color: #0188DE;
+        padding: 20px 0px 10px 0px;
+    }
 
-        #qifeiye-error .content {
-            display: inline-block;
-            padding-top: 0
-        }
+    h2 {
+        color: #0188DE;
+        font-size: 16px;
+        padding: 10px 0px 40px 0px;
+    }
 
-        #qifeiye-error .content h3 {
-            text-transform: uppercase;
-            font-weight: 300;
-            font-size: 24px;
-            line-height: 28px;
-            margin: 0
-        }
+    #page {
+        width: 910px;
+        padding: 20px 20px 40px 20px;
+        margin-top: 80px;
+    }
 
-        #qifeiye-error a {
-            color: #5e87b0;
-            text-decoration: none
-        }
-    </style>
-</head>
-<body id="qifeiye-error">
-<div class="overlay"></div>
-<!-- PAGE -->
-<section id="page">
-    <div class="container">
-        <div class="error">
-            501
-        </div>
-        <div class="content">
-            <p>
-            <h3>系统失败崩溃了</h3>
-            </p>
-        </div>
+    .button {
+        width: 180px;
+        height: 28px;
+        margin-left: 0px;
+        margin-top: 10px;
+        background: #009CFF;
+        border-bottom: 4px solid #0188DE;
+        text-align: center;
+    }
 
+    .button a {
+        width: 180px;
+        height: 28px;
+        display: block;
+        font-size: 14px;
+        color: #fff;
+    }
+
+    .button a:hover {
+        background: #5BBFFF;
+    }
+</style>
+
+<div id="page" style="border-style:dashed;border-color:#e4e4e4;line-height:30px;">
+    <h1>{{.errorCode}}~</h1>
+    <h2>Sorry, the site now can not be accessed. </h2>
+    <font color="#666666">{{.message}}</font><br/><br/>
+    <div class="button">
+        <a href="https://lattecake.com/" title="Home" target="_blank">Home</a>
     </div>
-</section>
-</body>
-</html>
+</div>
