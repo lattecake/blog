@@ -36,7 +36,7 @@ func (c *BaseController) Finish() {
 	begin, _ := strconv.Atoi(beginTime)
 	end, _ := strconv.Atoi(strconv.FormatInt(time.Now().UnixNano(), 10))
 
-	c.Ctx.Output.Status = 200
+	//c.Ctx.Output.Status = 200
 	c.Ctx.Output.Header("x-response-id", c.Ctx.Request.Header.Get("Worker-Id"))
 	c.Ctx.Output.Header("x-response-time", time.Duration(end - begin).String())
 
