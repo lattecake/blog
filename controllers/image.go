@@ -157,7 +157,7 @@ func (c *ImageController) Post() {
 	image.RealPath = path + fileName
 	image.ImageName = fileName
 	image.ClientOriginalName = h.Filename
-	image.Extension = ".jpeg"
+	image.Extension = "jpeg"
 	image.ImageSize = strconv.Itoa(int(h.Size))
 	image.ImagePath = filePath + fileName
 
