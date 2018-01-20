@@ -17,7 +17,7 @@ type Image struct {
 	PostId             int64     `orm:"column(post_id);default(0)"`
 	ImagePath          string    `orm:"null;size(255);column(image_path)"`
 	RealPath           string    `orm:"null;size(255);column(real_path)"`
-	ImageTime          time.Time `orm:"null;column(image_time);type(datetime)"`
+	ImageTime          time.Time `orm:"null;column(image_time);auto_now_add;type(datetime)"`
 	ImageStatus        int       `orm:"null;default(0);column(image_status)"`
 	ImageSize          string    `orm:"null;default(0);column(image_size)"`
 	Md5                string    `orm:"null;size(255);default(0);column(md5)"`
@@ -194,4 +194,24 @@ func DeleteImage(id int64) (err error) {
 		}
 	}
 	return
+}
+
+func GetImageByMd5(name string) (v *Image, err error) {
+	o := orm.NewOrm()
+	v = &Image{Md5: name}
+	if err = o.QueryTable(new(Image)).Filter("Md5", name).RelatedSel().One(v); err == nil {
+		return v, nil
+	}
+	return nil, err
+}
+
+//
+func ExistsImageByMd5(name string) (ok bool, err error) {
+	o := orm.NewOrm()
+
+	v := Image{}
+	if err = o.QueryTable(new(Image)).Filter("Md5", name).One(&v); err == nil {
+		return true, nil
+	}
+	return false, err
 }

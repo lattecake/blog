@@ -31,6 +31,22 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
+	beego.GlobalControllerRouter["github.com/lattecake/blog/controllers:ImageController"] = append(beego.GlobalControllerRouter["github.com/lattecake/blog/controllers:ImageController"],
+		beego.ControllerComments{
+			Method: "Delete",
+			Router: `/delete/image/:id`,
+			AllowHTTPMethods: []string{"delete"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["github.com/lattecake/blog/controllers:ImageController"] = append(beego.GlobalControllerRouter["github.com/lattecake/blog/controllers:ImageController"],
+		beego.ControllerComments{
+			Method: "Post",
+			Router: `/putImage`,
+			AllowHTTPMethods: []string{"post"},
+			MethodParams: param.Make(),
+			Params: nil})
+
 	beego.GlobalControllerRouter["github.com/lattecake/blog/controllers:PostController"] = append(beego.GlobalControllerRouter["github.com/lattecake/blog/controllers:PostController"],
 		beego.ControllerComments{
 			Method: "GetAll",
