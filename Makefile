@@ -8,10 +8,14 @@ GOGET = $(GOCMD) get
 BINARY_UNIX = $(BIN)_unix
 COPY = cp
 
-all: deps test build
+all: deps build
 
 build:
-	$(GOBUILD) -o $(BIN) -v
+	rm -rf $(bin)/$(APPNAME)
+	$(GOBUILD) -o $(BIN)/$(APPNAME) -v
+	$(COPY) -R conf/ $(BIN)/conf
+	$(COPY) -R views/ $(BIN)/views
+	$(COPY) -R static/ $(BIN)/static
 
 test:
 	$(GOTEST) -v ./...
@@ -23,10 +27,7 @@ clean:
 
 run:
 	$(GOBUILD) -o $(BIN)/$(APPNAME) -v
-	$(COPY) -R conf/ $(BIN)/conf
-	$(COPY) -R views/ $(BIN)/views
-	$(COPY) -R static/ $(BIN)/static
-	$(BIN)/$(APPNAME)
+	./$(APPNAME)
 
 deps:
 	$(GOGET) github.com/tools/godep
