@@ -43,7 +43,7 @@
     <div class="am-g am-g-fixed blog-fixed am-u-sm-centered blog-footer-padding">
         <div class="am-u-sm-12 am-u-md-4- am-u-lg-4">
             <h3>Get in touch with</h3>
-            <p class="am-text-sm">明明知道放下一切就可以轻松上路,却坚持背负一身破铜烂铁把自己累的够呛;那沉甸甸的重担里装满了无可救药的偏执和毫无希望的等待！</p>
+            <p class="am-text-sm">坚持背负一身破铜烂铁把自己累的够呛;那沉甸甸的重担里装满了无可救药的偏执和毫无希望的等待！</p>
         </div>
         <div class="am-u-sm-12 am-u-md-4- am-u-lg-4">
             <h3>社交账号</h3>

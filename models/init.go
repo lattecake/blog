@@ -16,6 +16,14 @@ func init() {
 	var password = beego.AppConfig.String("mysql_password")
 	var database = beego.AppConfig.String("mysql_db")
 
+	//ctx := context.Background()
+	//deadline, ok := ctx.Deadline()
+	//if !ok {
+	//	logs.Error(ok)
+	//}
+	//deadline.String()
+	//<-ctx.Done()
+
 	logs.Info("init db pool")
 
 	orm.RegisterDataBase("default", "mysql", ""+user+":"+password+"@tcp("+host+":"+port+")/"+database+"?charset=utf8&loc=Asia%2FShanghai")

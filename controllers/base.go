@@ -25,14 +25,14 @@ func (c *BaseController) Prepare() {
 
 	prepareTime := time.Now().UnixNano() - int64(beginTime)
 
-	logs.Info("| Worker-Id | ", c.WorkerId(), " | ", controllerName + "_" + actionName)
+	logs.Info("| Worker-Id | ", c.WorkerId(), " | ", controllerName+"_"+actionName)
 	logs.Info("| Worker-Id | ", c.Ctx.Input.Param("Worker-Id"), " | Begin-Time | ", time.Unix(0, int64(beginTime)).Format("2006-01-02 15:04:05.999999"), " | Prepare | ", time.Duration(prepareTime))
 }
 
 // 执行完方法之后
 func (c *BaseController) Finish() {
 
-	beginTime := c.Ctx.Request.Header.Get("Begin-Time")
+	beginTime := c.Ctx.Input.Param("Begin-Time")
 	begin, _ := strconv.Atoi(beginTime)
 	end, _ := strconv.Atoi(strconv.FormatInt(time.Now().UnixNano(), 10))
 
