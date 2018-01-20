@@ -1,6 +1,6 @@
 APPNAME = blog
 BIN = $(GOPATH)/bin
-GOCMD = /usr/local/go/bin/go
+GOCMD = go
 GOBUILD = $(GOCMD) build
 GOCLEAN = $(GOCMD) clean
 GOTEST = $(GOCMD) test

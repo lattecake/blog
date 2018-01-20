@@ -16,6 +16,7 @@ func init() {
 		workerId := uuid.NewV4().String()
 		//u, _ := uuid.NewV4()
 		//workerId := u.String()
+		//beginTime := strconv.FormatInt(time.Now().UnixNano(), 10)
 
 		beginTime := strconv.FormatInt(time.Now().UnixNano(), 10)
 
