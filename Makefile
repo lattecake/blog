@@ -7,11 +7,12 @@ GOTEST = $(GOCMD) test
 GOGET = $(GOCMD) get
 BINARY_UNIX = $(BIN)_unix
 COPY = cp
+PID = .pid
 
 all: deps build
 
 build:
-	rm -rf $(bin)/$(APPNAME)
+	rm -rf $(BIN)/$(APPNAME)
 	$(GOBUILD) -o $(BIN)/$(APPNAME) -v
 	$(COPY) -R conf/ $(BIN)/conf
 	$(COPY) -R views/ $(BIN)/views
@@ -25,7 +26,7 @@ clean:
 	rm -f $(BIN)
 	rm -f $(BINARY_UNIX)
 
-run:
+dev:
 	$(GOBUILD) -o $(BIN)/$(APPNAME) -v
 	./$(APPNAME)
 
@@ -35,3 +36,18 @@ deps:
 
 build-linux:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_UNIX) -v
+
+
+install-ui:
+	@yarn install
+
+run:
+	$(BIN)/$(APPNAME) & echo $$! > $(PID)
+
+restart:
+	@echo restart the app...
+	@kill `cat $(PID)` || true
+	./$(APPNAME) & echo $$! > $(PID)
+
+kill:
+	@kill `cat $(PID)` || true
