@@ -57,6 +57,16 @@ func (c *ImageController) Post() {
 		return
 	}
 
+	if token != beego.AppConfig.String("upload_image_token") {
+		logs.Warn(c.WorkerId(), " | token is error.")
+		c.Data["json"] = &resultImage{
+			Code:    "fail",
+			Message: "token is error.",
+		}
+		c.ServeJSON()
+		return
+	}
+
 	f, h, err := c.GetFile("MarkdownImage")
 	if err != nil {
 		logs.Error(c.WorkerId(), " | ", err)
