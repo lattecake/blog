@@ -105,7 +105,7 @@ func (c *ImageController) Post() {
 				Hash      string `json:"hash"`
 				Timestamp int64  `json:"timestamp"`
 				Url       string `json:"url"`
-			}{Width: 0, Height: 0, Filename: h.Filename, Storename: h.Filename, Size: h.Size, Path: "/", Hash: md5FileName, Timestamp: time.Now().Unix(), Url: beego.AppConfig.String("upload_image_url") + "/images/" + img.ImagePath},
+			}{Width: 0, Height: 0, Filename: h.Filename, Storename: h.Filename, Size: h.Size, Path: "/", Hash: md5FileName, Timestamp: time.Now().Unix(), Url: beego.AppConfig.String("upload_image_url") + "images/" + img.ImagePath},
 		}
 
 		c.Data["json"] = resImg
@@ -173,7 +173,7 @@ func (c *ImageController) Post() {
 			Hash      string `json:"hash"`
 			Timestamp int64  `json:"timestamp"`
 			Url       string `json:"url"`
-		}{Width: 0, Height: 0, Filename: h.Filename, Storename: h.Filename, Size: h.Size, Path: filePath, Hash: md5FileName, Timestamp: time.Now().Unix(), Url: beego.AppConfig.String("upload_image_url") + "/images/" + filePath + fileName},
+		}{Width: 0, Height: 0, Filename: h.Filename, Storename: h.Filename, Size: h.Size, Path: filePath, Hash: md5FileName, Timestamp: time.Now().Unix(), Url: beego.AppConfig.String("upload_image_url") + "images/" + filePath + fileName},
 	}
 
 	if _, err := models.AddImage(image); err == nil {
@@ -198,7 +198,7 @@ func (c *ImageController) Post() {
 // @Param	id		path 	string	true		"The id you want to delete"
 // @Success 200 {string} delete success!
 // @Failure 403 id is empty
-// @router /delete/image/:id [delete]
+// @router /image/delete/:sign [delete]
 func (c *ImageController) Delete() {
 	//idStr := c.Ctx.Input.Param(":id")
 	//id, _ := strconv.ParseInt(idStr, 0, 64)
