@@ -80,5 +80,27 @@
 <![endif]-->
 <script src="https://lattecake.oss-cn-beijing.aliyuncs.com/static/blog/js/amazeui.min.js"></script>
 <!-- <script src="/static/assets/js/app.js"></script> -->
+
+<script>
+    window.onload = function () {
+        if (!window.applicationCache) {
+            alert("你的浏览器不支持HTML5,请升级您的浏览器");
+            window.location.href = "http://www.google.cn/intl/zh-CN/chrome/browser/";
+        }
+    };
+
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?325ecd282d3804cd811c4072e0b3ed2a";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1257356896'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257356896' type='text/javascript'%3E%3C/script%3E"));
+
+</script>
+
 </body>
 </html>

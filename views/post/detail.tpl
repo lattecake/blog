@@ -51,7 +51,8 @@
     {{/*<li class="am-pagination-next"><a href="">不远的未来 &raquo;</a></li>*/}}
     {{/*</ul>*/}}
 
-    {{/*<hr>*/}}
+    {{/*<hr />*/}}
+        <div id="SOHUCS" sid="{{.post.Id}}"></div>
 
     {{/*<form class="am-form am-g">*/}}
     {{/*<h3 class="blog-comment">评论</h3>*/}}
@@ -79,3 +80,11 @@
     </div>
 </div>
 <!-- content end -->
+
+<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+window.changyan.api.config({
+appid: 'cytDFbl8X',
+conf: 'prod_1db332f0655b38d6a074b2f8b6cd7227'
+});
+</script>
