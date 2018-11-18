@@ -2,9 +2,10 @@ package controllers
 
 import (
 	"github.com/astaxie/beego/logs"
-	"strconv"
 	"github.com/lattecake/blog/models"
 	"github.com/shurcooL/github_flavored_markdown"
+	"strconv"
+	"strings"
 )
 
 // PostController operations for Post
@@ -50,6 +51,8 @@ func (c *PostController) GetOne() {
 	//html := bluemonday.UGCPolicy().SanitizeBytes(unsafe)
 
 	html := github_flavored_markdown.Markdown([]byte(post.Content))
+
+	post.Content = strings.Replace(post.Content, "https://ofbudvg4c.qnssl.com/", "http://source.lattecake.com", -1)
 
 	c.Data["title"] = post.Title
 	c.Data["image"] = images[0]
