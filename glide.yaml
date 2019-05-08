@@ -1,0 +1,25 @@
+package: github.com/lattecake/blog
+import:
+- package: github.com/astaxie/beego
+  version: f16688817aa428d10361394015b40d096b680542
+  subpackages:
+  - config
+  - context
+  - context/param
+  - grace
+  - logs
+  - session
+  - toolbox
+  - utils
+  - orm
+- package: github.com/go-sql-driver/mysql
+  version: v1.4.1
+- package: github.com/lattecake/utils
+- package: github.com/satori/go.uuid
+  version: v1.2.0
+- package: github.com/shurcooL/github_flavored_markdown
+testImport:
+- package: github.com/smartystreets/goconvey
+  version: 1.6.3
+  subpackages:
+  - convey
