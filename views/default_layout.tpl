@@ -43,7 +43,7 @@
     <div class="am-g am-g-fixed blog-fixed am-u-sm-centered blog-footer-padding">
         <div class="am-u-sm-12 am-u-md-4- am-u-lg-4">
             <h3>Get in touch with</h3>
-            <p class="am-text-sm">坚持背负一身破铜烂铁把自己累的够呛;那沉甸甸的重担里装满了无可救药的偏执和毫无希望的等待！</p>
+            <p class="am-text-sm">一件事情的结束，永远是另一件事情的开始！（鬼信哦）</p>
         </div>
         <div class="am-u-sm-12 am-u-md-4- am-u-lg-4">
             <h3>社交账号</h3>
@@ -62,11 +62,11 @@
             <h1>曾经沧海桑田，已是物是人非。</h1>
             <h3>Heroes</h3>
             <p>
-                很久以后我们才会明白，所有人来到你的生命里自有它的意义。人最难的就是学会怎么平静的面对离别，而这个世界的吊诡之处就在于：当你平静面对离别时，那个人已经在你心里永远不会走了...
+		多赚点钱，赚的钱多好，很多事自然就变了。
             </p>
         </div>
     </div>
-    <div class="blog-text-center">© LatteCake 2018 All right reserved. By dudulu.me</div>
+    <div class="blog-text-center">© LatteCake 2019 All right reserved. By dudulu.me</div>
 </footer>
 
 
