@@ -1,0 +1,81 @@
+hash: c52e63b89794f1a4075061f2745cfd2bd202002c2819ff23bfc55f55c88d90a2
+updated: 2019-05-08T18:11:32.023541+08:00
+imports:
+- name: github.com/astaxie/beego
+  version: 1b6edafc96ad27b6515fafeccd7339dda3e997b1
+  subpackages:
+  - config
+  - context
+  - context/param
+  - grace
+  - logs
+  - orm
+  - session
+  - toolbox
+  - utils
+- name: github.com/go-sql-driver/mysql
+  version: 72cd26f257d44c1114970e19afddcd812016007e
+- name: github.com/lattecake/utils
+  version: a3aab12c69625f4395e6afda35927b5d9b26027c
+- name: github.com/microcosm-cc/bluemonday
+  version: 89802068f71166e95c92040512bf2e11767721ed
+- name: github.com/russross/blackfriday
+  version: f3ccc8fc06d5d2e48a7083dcf0180c00a8a284cc
+- name: github.com/satori/go.uuid
+  version: f58768cc1a7a7e77a3bd49e98cdd21419399b6a3
+- name: github.com/sergi/go-diff
+  version: da645544ed44df016359bd4c0e3dc60ee3a0da43
+  subpackages:
+  - diffmatchpatch
+- name: github.com/shurcooL/github_flavored_markdown
+  version: 2122de53247006a637e59cf1c99d0770312d4be3
+- name: github.com/shurcooL/highlight_diff
+  version: 111da2e7d480d1ae2e33d64cd6b19530db117002
+- name: github.com/shurcooL/highlight_go
+  version: 9d8641ddf2e1517d286cedf0f4f4a6fb41ef5043
+  subpackages:
+  - internal/go/scanner
+  - internal/go/token
+- name: github.com/shurcooL/octicon
+  version: 9ff1a4cf27f4a918862c3ffbd24371b3aed18f9d
+- name: github.com/shurcooL/sanitized_anchor_name
+  version: 7bfe4c7ecddb3666a94b053b422cdd8f5aaa3615
+- name: github.com/sourcegraph/annotate
+  version: f4cad6c6324d3f584e1743d8b3e0e017a5f3a636
+- name: github.com/sourcegraph/syntaxhighlight
+  version: bd320f5d308e1a3c4314c678d8227a0d72574ae7
+- name: golang.org/x/crypto
+  version: 49796115aa4b964c318aad4f3084fdb41e9aa067
+  subpackages:
+  - acme
+  - acme/autocert
+- name: golang.org/x/net
+  version: 1c05540f6879653db88113bc4a2b70aec4bd491f
+  subpackages:
+  - html
+  - html/atom
+- name: google.golang.org/appengine
+  version: 54a98f90d1c46b7731eb8fb305d2a321c30ef610
+  subpackages:
+  - cloudsql
+- name: gopkg.in/yaml.v2
+  version: 5420a8b6744d3b0345ab293f6fcba19c978f1183
+testImports:
+- name: github.com/gopherjs/gopherjs
+  version: 3e4dfb77656c424b6d1196a4d5fed0fcf63677cc
+  subpackages:
+  - js
+- name: github.com/jtolds/gls
+  version: b4936e06046bbecbb94cae9c18127ebe510a2cb9
+- name: github.com/smartystreets/assertions
+  version: f487f9de1cd36ebab28235b9373028812fb47cbd
+  subpackages:
+  - internal/go-diff/diffmatchpatch
+  - internal/go-render/render
+  - internal/oglematchers
+- name: github.com/smartystreets/goconvey
+  version: 9e8dc3f972df6c8fcc0375ef492c24d0bb204857
+  subpackages:
+  - convey
+  - convey/gotest
+  - convey/reporting
