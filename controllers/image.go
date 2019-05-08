@@ -1,12 +1,12 @@
 package controllers
 
 import (
-	"github.com/lattecake/blog/models"
-	"strconv"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
+	"github.com/lattecake/blog/models"
+	utilfile "github.com/lattecake/utils/file"
 	"os"
-	"github.com/lattecake/utils"
+	"strconv"
 	"time"
 )
 
@@ -24,7 +24,7 @@ func (c *ImageController) URLMapping() {
 type resultImage struct {
 	Code    string `json:"code"`
 	Message string `json:"msg"`
-	Data struct {
+	Data    struct {
 		Width     int    `json:"width"`
 		Height    int    `json:"height"`
 		Filename  string `json:"filename"`
@@ -80,7 +80,7 @@ func (c *ImageController) Post() {
 
 	defer f.Close()
 
-	md5FileName, err := utils.Md5File(f)
+	md5FileName, err := utilfile.Md5File(f)
 	if err != nil {
 		logs.Error(c.WorkerId(), " | ", err)
 		c.Data["json"] = &resultImage{
@@ -117,7 +117,7 @@ func (c *ImageController) Post() {
 
 	path := beego.AppConfig.String("upload_path") + filePath
 
-	ok, err := utils.PathExists(path)
+	ok, err := utilfile.PathExists(path)
 	if err != nil {
 		logs.Error(c.WorkerId(), " | ", err)
 		c.Data["json"] = &resultImage{

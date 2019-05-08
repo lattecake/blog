@@ -13,8 +13,3 @@ import:
 - package: github.com/satori/go.uuid
   version: v1.2.0
 - package: github.com/shurcooL/github_flavored_markdown
-testImport:
-- package: github.com/smartystreets/goconvey
-  version: 1.6.3
-  subpackages:
-  - convey
